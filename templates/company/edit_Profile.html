@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% extends 'company/company_index.html' %}
+{% block body %}
+
+<body><form action="/edit_profile_post" method="post" enctype="multipart/form-data">
+ <table class="table table-borderless table-striped hover">
+    <tr>
+      <th>COMPANY NAME</th>
+      <td colspan="7"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield"  value="{{ data['c_name'] }}"/></td>
+    </tr>
+      <tr>
+      <th>TAX ID</th>
+      <td colspan="7"><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" value="{{ data['tax_id'] }}" /></td>
+    </tr>
+    <tr>
+      <th>LEGAL STATUS</th>
+      <td colspan="7"><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" value="{{ data['legal_status'] }}" /></td>
+    </tr>
+    <tr>
+      <th>FIELD OF BUSINESS</th>
+      <td colspan="7"><label for="textfield7"></label>
+      <input type="text" name="textfield7" id="textfield7" value="{{ data['field_of_business'] }}" /></td>
+    </tr>
+    <tr>
+      <th>REGISTERED OFFICE</th>
+      <td><label for="textfield8"></label>
+      <input type="text" name="textfield8" id="textfield8" value="{{ data['registered_office'] }}"/></td>
+      <th>STATE</th>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" value="{{ data['state'] }}" /></td>
+      <th>REGION</th>
+      <td colspan="3"><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" value="{{ data['region'] }}" /></td>
+    </tr>
+    <tr>
+      <th>MUNCIPALITY</th>
+      <td><label for="textfield9"></label>
+      <input type="text" name="textfield9" id="textfield9" value="{{ data['muncipality'] }}" /></td>
+      <th>POSTAL CODE</th>
+      <td><label for="textfield10"></label>
+      <input type="text" name="textfield10" id="textfield10" value="{{ data['postcode'] }}" /></td>
+      <th>STREET</th>
+      <td><label for="textfield11"></label>
+      <input type="text" name="textfield11" id="textfield11" value="{{ data['street'] }}"/></td>
+      <th>NUMBER</th>
+      <td><label for="textfield12"></label>
+      <input type="text" name="textfield12" id="textfield12" value="{{ data['phone_number'] }}" /></td>
+    </tr>
+    <tr>
+      <th>ALTERNATIVE EMAIL</th>
+      <td><label for="textfield13"></label>
+      <input type="text" name="textfield13" id="textfield13" value="{{ data['email'] }}"/></td>
+      <th>TELEPHONE</th>
+      <td><label for="textfield14"></label>
+      <input type="text" name="textfield14" id="textfield14" value="{{ data['telephone'] }}"/></td>
+      <th>FAX</th>
+      <td colspan="3"><label for="textfield15"></label>
+      <input type="text" name="textfield15" id="textfield15" value="{{ data['fax'] }}" /></td>
+    </tr>
+    <tr>
+      <th>POSTAL ADDRESS</th>
+      <td><label for="textfield16"></label>
+      <input type="text" name="textfield16" id="textfield16" value="{{ data['postal_address'] }}" /></td>
+        <th>LOGO</th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" value="{{ data['logo'] }}"/></td>
+
+    </tr>
+    <tr>
+      <th>CITY</th>
+      <td><label for="textfield19"></label>
+      <input type="text" name="textfield19" id="textfield19" value="{{ data['city'] }}"/></td>
+      <th>COUNTRY</th>
+      <td colspan="5"><label for="textfield20"></label>
+      <input type="text" name="textfield20" id="textfield20" value="{{ data['country'] }}"/></td>
+    </tr>
+    <tr>
+      <th>BANK</th>
+      <td><label for="textfield21"></label>
+      <input type="text" name="textfield21" id="textfield21" value="{{ data['bank_name'] }}" /></td>
+      <th>ACCOUNT NUMBER</th>
+      <td><label for="textfield22"></label>
+      <input type="text" name="textfield22" id="textfield22" value="{{ data['bank_number'] }}" /></td>
+      <th>IFSC</th>
+      <td colspan="3"><label for="textfield23"></label>
+      <input type="text" name="textfield23" id="textfield23" value="{{ data['ifsc_code'] }}" /></td>
+    </tr>
+    <tr>
+      <td colspan="8">DIRECTORS
+      <label for="textfield24">:</label></td>
+    </tr>
+    <tr>
+      <th>TITLE</th>
+      <td colspan="7"><label for="textfield24"></label>
+      <input type="text" name="textfield24" id="textfield24" value="{{ data['director_title'] }}"/></td>
+    </tr>
+    <tr>
+      <th>NAME</th>
+      <td><label for="textfield26"></label>
+      <input type="text" name="textfield26" id="textfield26" value="{{ data['director_name'] }}"/></td>
+      <th>SURNAME</th>
+      <td><label for="textfield27"></label>
+      <input type="text" name="textfield27" id="textfield27" value="{{ data['director_surname'] }}" /></td>
+      <th>DOB</th>
+      <td colspan="3"><label for="textfield25"></label>
+      <input type="date" name="textfield25" id="textfield25" value="{{ data['director_dob'] }}"/></td>
+    </tr>
+    <tr>
+      <th>TITLE</th>
+      <td colspan="7"><label for="textfield4"></label>
+      <input type="text" name="textfield28" id="textfield28" value="{{ data['director_title'] }}" /></td>
+    </tr>
+    <tr>
+      <th>NAME</th>
+      <td><label for="textfield26"></label>
+        <input type="text" name="textfield29" id="textfield26" value="{{ data['director_name'] }}" /></td>
+      <th>SURNAME</th>
+      <td><label for="textfield27"></label>
+        <input type="text" name="textfield29" id="textfield27" value="{{ data['director_surname'] }}" /></td>
+      <th>DOB</th>
+      <td colspan="3"><label for="textfield25"></label>
+        <input type="date" name="textfield29" id="textfield25" value="{{ data['director_dob'] }}" /></td>
+    </tr>
+    <tr>
+      <th>TITLE</th>
+      <td colspan="7"><label for="textfield4"></label>
+        <input type="text" name="textfield29" id="textfield29" value="{{ data['director_title'] }}" /></td>
+    </tr>
+    <tr>
+      <th>NAME</th>
+      <td><label for="textfield26"></label>
+        <input type="text" name="textfield29" id="textfield26" value="{{ data['director_name'] }}" /></td>
+      <th>SURNAME</th>
+      <td><label for="textfield27"></label>
+        <input type="text" name="textfield29" id="textfield27" value="{{ data['director_surname'] }}" /></td>
+      <th>DOB</th>
+      <td colspan="3"><label for="textfield25"></label>
+        <input type="date" name="textfield29" id="textfield25" value="{{ data['director_dob'] }}" /></td>
+    </tr>
+    <tr>
+      <th>PROOF OF FINANCIAL ELIGIBILITY</th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" value="{{ data['proof_of_financialeligibility'] }}" /></td>
+      <th>BANK GUARANTEE</th>
+      <td colspan="5"><input type="file" name="fileField2" id="fileField2" value="{{ data['bankguarantee'] }}" /></td>
+    </tr>
+    <tr>
+      <td colspan="8">GENERAL TERMS AND CONDITONS:</td>
+    </tr>
+
+    <tr>
+      <td colspan="8"><ol>
+        <li>
+          <p>Company registration: The company must be legally registered and recognized in its country of origin.</p>
+          </li>
+        <li>
+          <p>Financial requirements: The company may need to meet specific financial requirements such as minimum revenue, profitability, and net worth.</p>
+          </li>
+        <li>
+          <p>Disclosure requirements: The company must disclose information about its business, financial performance, and any legal or regulatory issues to the stock broker.</p>
+          </li>
+        <li>
+          <p>Compliance with regulations: The company must comply with relevant regulations and rules set by the stock exchange, securities regulators, and other authorities.</p>
+          </li>
+        <li>
+          <p>Shareholder requirements: The company may need to have a certain number of shareholders or a minimum percentage of shares that are publicly traded.</p>
+          </li>
+        <li>
+          <p>Trading requirements: The company must agree to comply with the broker's trading rules and procedures.</p>
+          </li>
+        <li>
+          <p>Fees and commissions: The company must agree to pay fees and commissions to the broker for its services.</p>
+          </li>
+        <li>
+          <p>Risk disclosures: The company must acknowledge the risks involved in trading on the stock exchange and agree to assume responsibility for any losses incurred.</p>
+          </li>
+        </ol>
+      <p>It is important for companies to carefully review the terms and conditions before entering into an agreement with a stock broker to ensure they are comfortable with the requirements and obligations.</p>
+      <p>
+        <input type="checkbox" name="checkbox" id="checkbox" />
+        <label for="checkbox"></label>
+        <tr>
+      <td colspan="2" ><input type="submit" name="button" id="button" value="Submit" /></td>
+    </tr>
+      </p></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

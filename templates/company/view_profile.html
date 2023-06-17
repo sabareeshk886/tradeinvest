@@ -1,0 +1,106 @@
+{% extends 'company/company_index.html' %}
+{% block body %}
+
+<body><form action="" method="get" enctype="multipart/form-data">
+  <p>&nbsp;</p>
+ <table class="table table-borderless table-striped hover">
+    <tr>
+      <td ><input type="image" name="imageField" id="imageField" src="../../Photos/profile_sign.jpg" width="200" height="200" /></td>
+      <th width="1000"><div align="center">USER ID</div></th>
+    </tr>
+  </table>
+  <p><a href="/edit_profile" class="btn btn-success">EDIT PROFILE</a></p>
+  <p>&nbsp;</p>
+ <table class="table table-borderless table-striped hover">
+    <tr>
+      <th>COMPANY NAME</th>
+      <td>{{ data['c_name'] }}</td>
+    </tr>
+    <tr>
+      <th>COMPANY ID</th>
+      <td>{{ data['C_id'] }}</td>
+    </tr>
+    <tr>
+      <th>TAX ID</th>
+       <td>{{ data['tax_id'] }}</td>
+    </tr>
+    <tr>
+      <th>LEGAL STATUS</th>
+       <td>{{ data['legal_status'] }}</td>
+    </tr>
+    <tr>
+      <th>FIELD OF BUSINESS</th>
+       <td>{{ data['field_of_business'] }}</td>
+    </tr>
+    <tr>
+      <th>REGISTERED OFFICE</th>
+     <td>{{ data['registered_office'] }}</td>
+      <th>STATE</th>
+       <td>{{ data['state'] }}</td>
+      <th>REGION</th>
+       <td>{{ data['region'] }}</td>
+    </tr>
+    <tr>
+      <th>MUNCIPALITY</th>
+       <td>{{ data['muncipality'] }}</td>
+      <th>POSTAL CODE</th>
+     <td>{{ data['postcode'] }}</td>
+      <th>STREET</th>
+      <td>{{ data['street'] }}</td>
+      <th>NUMBER</th>
+       <td>{{ data['phone_number'] }}</td>
+    </tr>
+    <tr>
+      <th>EMAIL</th>
+       <td>{{ data['email'] }}</td>
+      <th>TELEPHONE</th>
+      <td>{{ data['telephone'] }}</td>
+      <th>FAX</th>
+       <td>{{ data['fax'] }}</td>
+    </tr>
+    <tr>
+      <th>POSTAL ADDRESS</th>
+       <td>{{ data['postal_address'] }}</td>
+      <th>NAME</th>
+      <td>{{ data[''] }}</td>
+      <th>SURNAME</th>
+      <td>{{ data['director_surname'] }}</td>
+    </tr>
+    <tr>
+      <th>CITY</th>
+       <td>{{ data['city'] }}</td>
+      <th>COUNTRY</th>
+      <td>{{ data['country'] }}</td>
+    </tr>
+    <tr>
+      <th>BANK</th>
+       <td>{{ data['bank_name'] }}</td>
+      <th>ACCOUNT NUMBER</th>
+    <td>{{ data['bank_number'] }}</td>
+      <th>IFSC</th>
+       <td>{{ data['ifsc_code'] }}</td>
+    </tr>
+    <tr>
+      <th colspan="8">DIRECTORS
+        <label for="textfield24">:</label></th>
+    </tr>
+    <tr>
+      <th>TITLE</th>
+ <td>{{ data['director_title'] }}</td>
+    </tr>
+    <tr>
+      <th>NAME</th>
+       <td>{{ data['director_name'] }}</td>
+      <th>SURNAME</th>
+       <td>{{ data['director_surname'] }}</td>
+      <th>DOB</th>
+   <td>{{ data['director_dob'] }}</td>
+    </tr>
+    <tr>
+     <td>{{ data['director_title'] }}</td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

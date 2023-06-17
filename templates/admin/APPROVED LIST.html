@@ -1,0 +1,32 @@
+{% extends 'admin/home_index.html' %}
+{% block body %}
+<body><br />
+
+
+<form id="form1" name="form1" method="post" action="">
+ <table class="table table-borderless table-striped hover">
+    <tr>
+      <th>SL.NO</th>
+      <th>COMPANY NAME</th>
+      <th>TAX ID</th>
+      <th>REGISTERED OFFICE</th>
+
+      <th>BANK GUARANTEE</th>
+      <th>REJECT</th>
+    </tr>
+ <td><td>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>{{ i['c_name'] }}&nbsp;</td>
+
+      <td>{{ i['tax_id'] }}&nbsp;</td>
+      <td>{{ i['registered_office'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['bankguarantee'] }}</td>
+      <td><a href=/rejected_company/" class="btn btn-danger">REJECT</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

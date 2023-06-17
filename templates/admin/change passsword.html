@@ -1,0 +1,25 @@
+{% extends 'admin/home_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/change_password_post">
+ <table class="table table-borderless table-striped hover">
+    <tr>
+      <th>CURRENTPASSWORD</th>
+      <td><input type="text" name="textfield" id="textfield" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>NEWPASSWORD</th>
+      <td><input type="text" name="textfield2" id="textfield2" class="form-control"required/></td>
+    </tr>
+    <tr>
+      <th>CONFIRMPASSWORD</th>
+      <td><input type="text" name="textfield4" id="textfield4" class="form-control"required/></td>
+    </tr>
+    <tr>
+      <td  colspan="2" align="center"><input type="submit" name="button" id="button" value="SUBMIT"  class="btn btn-success"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

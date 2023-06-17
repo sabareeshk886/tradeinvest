@@ -1,0 +1,43 @@
+{% extends 'admin/home_index.html' %}
+{% block body %}
+
+<body><br />
+
+
+<form id="form1" name="form1" method="post" action="/company_list_post">
+ <table class="table table-borderless table-striped hover">
+    <tr>
+      <th>SEARCH</th>
+      <td><input name="textfield" class="form-control" /></td>
+      <td><input type="submit" name="button" id="button" value="GO" class="btn btn-success"/></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+ <table class="table table-borderless table-striped hover">
+    <tr>
+      <td>SL.NO</td>
+      <td>COMPANY NAME</td>
+      <td>COMPANY ID</td>
+      <td>TAX ID</td>
+      <td>REGISTERED OFFICE</td>
+      <td>BANK GUARANTEE</td>
+      <td>APPROVE</td>
+      <td>REJECT</td>
+     
+    </tr>
+      {% for i in data%}
+    <tr>
+     <td>&nbsp;{{ loop.index }}</td>
+      <td>{{ i['c_name'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['C_id'] }}</td>
+      <td>{{ i['tax_id'] }}&nbsp;</td>
+      <td>{{ i['registered_office'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['bankguarantee' ]}}</td>
+      <td><a href="/approve_company/{{ i['C_id'] }}">APPROVE</a></td>
+      <td><a href="/rejected_company/{{ i['C_id'] }}">REJECT</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

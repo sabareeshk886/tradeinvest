@@ -1,0 +1,27 @@
+{% extends 'company/company_index.html' %}
+{% block body %}
+
+<body>
+ <table class="table table-borderless table-striped hover">
+    <tr>
+      <th>ORDER ID</th>
+      <th>USER</th>
+      <th>EMAIL</th>
+      <th>AMOUNT</th>
+      <th>DATE</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['user_name'] }}</td>
+      <td>&nbsp;{{ i['email'] }}</td>
+      <td>{{ i['amounta'] }} ETH</td>
+      <td>&nbsp;{{ i['datea' ]}}</td>
+
+    </tr>
+      {% endfor %}
+ <tr><td colspan="4"><h4>TOTAL:{{ tot }} ETH</h4></td></tr>
+  </table>
+
+</body>
+{% endblock %}

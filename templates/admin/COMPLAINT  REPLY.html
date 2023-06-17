@@ -1,0 +1,19 @@
+{% extends 'admin/home_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/complaint_reply_post">
+  <p>&nbsp;</p>
+ <table class="table table-borderless table-striped hover">
+    <tr><input type="hidden" name="complaint_id" value="{{ id }}">
+      <th>REPLY</th>
+      <td><textarea name="textarea" cols="45" rows="5" class="form-control"></textarea> </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button" value="send" class="btn btn-success" /></td>
+    </tr>
+  </table>
+  
+</form>
+</body>
+{% endblock %}

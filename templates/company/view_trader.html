@@ -1,0 +1,59 @@
+{% extends 'company/company_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+ <table class="table table-borderless table-striped hover">
+    <tr>
+      <th>USER_NAME</th>
+      <th>ADDRESS</th>
+      <th>PAN</th>
+      <th>DOB</th>
+      <th>CONTACT</th>
+      <th>E-MAIL</th>
+      <th>GENDER</th>
+      <th>MARITAL STATUS</th>
+      <th>ANNUAL INCOME</th>
+      <th>TRADING EXPERIENCE</th>
+      <th>OCCUPATON</th>
+      <th>COUNTRY</th>
+      <th>ACCOUNT HOLDER NAME</th>
+      <th>IFSC CODE</th>
+      <th>ACCOUNT NUMBER</th>
+      <th>ACCOUNT TYPE</th>
+      <th>SIGNATURE</th>
+      <th>INCOME PROOF</th>
+      <th>INCOME PROOF TYPE</th>
+      <th>PHOTO</th>
+      <th>LOCATION</th>
+      
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ i['user_name' ]}}</td>
+      <td>{{ i['address'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['pan'] }}</td>
+      <td>{{ i['dob'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['contact' ]}}</td>
+      <td>&nbsp;{{ i['email'] }}</td>
+      <td>&nbsp;{{ i['gender'] }}</td>
+      <td>{{ i['marital_status'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['annual_income'] }}</td>
+      <td>&nbsp;{{ i['trading_experience'] }}</td>
+      <td>&nbsp;{{ i['occuppation'] }}</td>
+      <td>&nbsp;{{ i['country'] }}</td>
+      <td>&nbsp;{{ i['accountholder_name'] }}</td>
+      <td>&nbsp;{{ i['ifsc_code'] }}</td>
+      <td>&nbsp;{{ i['account_number'] }}</td>
+      <td>&nbsp;{{ i['account_type'] }}</td>
+      <td>&nbsp;{{ i['signature'] }}</td>
+      <td>{{ i['income_proof'] }}&nbsp;</td>
+      <td>{{ i['incomeproof_type'] }}&nbsp;</td>
+      <td><img src="{{ i['photo'] }}" height="100px" width="100px"></td>
+      <td>{{ i['location'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'admin/home_index.html' %}
+{% block body %}
+
+<body>
+<form action="/view_complaints_post" method="post">
+ <table class="table table-borderless table-striped hover">
+    <tr>
+      <th>SEARCH</th>
+      <td><input name="textfield" type="date" class="form-control"/></td>
+        <td><input name="textfield2"  type="date" class="form-control"/></td>
+
+      <td><input type="submit" name="button" id="button" value="GO" class="btn btn-success" /></td>
+    </tr>
+  </table>
+ <table class="table table-borderless table-striped hover">
+  <tr style="background:white" >
+    <th>SL.NO</th>
+    <th>DATE</th>
+    <th>USER INFO</th>
+    <th>COMPLAINT</th>
+    <th>REPLY</th>
+    <th>STATUS</th>
+  </tr>
+  {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>{{ i['date'] }}&nbsp;</td>
+      <td>{{ i['user_name'] }}&nbsp;</td>
+      <td>{{ i['complaint'] }}&nbsp;</td>
+       <td>{% if i['status']=='pending' %}<a href="/send_reply/{{ i['complaint_id'] }}" class="btn btn-success">REPLY</a>{% else %}{{ i['reply'] }}{% endif %}</td>
+        <td>&nbsp;{{ i['status'] }}</td>
+
+
+    </tr>
+      {% endfor %}
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %}
